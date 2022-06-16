@@ -1,0 +1,56 @@
+/* @import url(https://fonts.googleapis.com/css?family=Roboto);
+ body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica",  "Arial", sans-serif;
+  background: #eaeaea;
+} */
+
+section#nav-test {
+  padding: 0em;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+section#nav-test #nav-container {
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+}
+section#nav-test #nav-container ul {
+  display: flex;
+  background: #6777ef;/* #323639; */
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0;
+}
+section#nav-test #nav-container ul li {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  margin-left: 60px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+section#nav-test #nav-container ul li:first-child {
+  margin-left: 0;
+}
+section#nav-test #nav-container ul li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+section#nav-test #nav-container #line {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: #6610f2;/* red; */
+  transition: all 150ms ease-in-out;
+}
+
+section#nav-test #nav-container ul li a:hover{
+  color: #6610f2;
+}

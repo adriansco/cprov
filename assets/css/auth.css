@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  /* background:lightblue; */
+  font-family: 'Lato', serif;
+  min-height: 100vh;
+  margin: 0em;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container:hover .top:before, .container:hover .top:after, .container:hover .bottom:before, .container:hover .bottom:after, .container:active .top:before, .container:active .top:after, .container:active .bottom:before, .container:active .bottom:after {
+  margin-left: 200px;
+  transform-origin: -200px 50%;
+  transition-delay: 0s;
+}
+.container:hover .center, .container:active .center {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.top:before, .top:after, .bottom:before, .bottom:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 200vmax;
+  height: 200vmax;
+  top: 50%;
+  left: 50%;
+  margin-top: -100vmax;
+  transform-origin: 0 50%;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  z-index: 10;
+  opacity: 0.65;
+  transition-delay: 0.2s;
+}
+
+.top:before {
+  transform: rotate(45deg);
+  background: #ee9505;
+}
+.top:after {
+  transform: rotate(135deg);
+  background: #f6bb3d;
+}
+
+.bottom:before {
+  transform: rotate(-45deg);
+  background: #08a0df;
+}
+.bottom:after {
+  transform: rotate(-135deg);
+  background: #95bc21;
+}
+
+.center {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  transition-delay: 0s;
+  color: #333;
+}
+.center input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 1px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+/* Botón */
+/* .box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform : translate(-50% ,-50%);
+  }
+  
+  .btn:link,
+  .btn:visited{
+    text-decoration: none;
+    text-transform:uppercase;
+    position:relative;
+    top:0;
+    left:0;
+    padding:10px 30px;
+    border-radius:100px;
+    display:inline-block;
+    transition: all .5s;
+  }
+  
+  .btn-white{
+    background:#08a0df;
+    color:#000;
+  }
+  
+  .btn:hover{
+     box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+     transform : translateY(-3px);
+  }
+  
+  .btn:active{
+    box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+    transform:translateY(-1px);
+  }
+  
+  .btn-bottom-animation-1{
+    animation:comeFromBottom 1s ease-out .8s;
+  }
+  
+  .btn::after{
+    content:"";
+    text-decoration: none;
+    text-transform:uppercase;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border-radius:100px;
+    display:inline-block;
+    z-index:-1;
+    transition: all .5s;
+  }
+  
+  .btn-white::after {
+      background: #08a0df;
+  }
+  
+  .btn-animation-1:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+  }
+  
+  @keyframes comeFromBottom{
+    0%{
+      opacity:0;
+      transform:translateY(40px);
+    } 
+    100%{
+      opacity:1;
+      transform:translateY(0);
+    }
+  } */
+
+  .draw-border {
+    box-shadow: inset 0 0 0 2px #08a0df;
+    color: #08a0df;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+  }
+  .draw-border::before, .draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .draw-border::before {
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+  }
+  .draw-border::after {
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
+  .draw-border:hover {
+    color: #f6bb3d;
+  }
+  .draw-border:hover::before, .draw-border:hover::after {
+    border-color: #f6bb3d;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+  }
+  .draw-border:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+  }
+  .draw-border:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    /* font: 700 1.2rem 'Lato', serif; */
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+  }
+  .btn:focus {
+    outline: 2px dotted #08a0df;
+  }
+  
+ /*  body {
+    background: #1f1a25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  } */
+  
